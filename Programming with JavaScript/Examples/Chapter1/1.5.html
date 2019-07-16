@@ -1,0 +1,36 @@
+<html>
+<body>
+    <h1>Object Oriented Programming</h1>
+    <h2>Obects</h2>
+    <script>
+        var obj = new Object();
+
+        obj.Name = "ali";
+        obj.Email = "ali@gmail.com";
+
+        document.writeln(obj.Email);
+        
+    </script>
+
+    <h2>
+        Functions as Object
+    </h2>
+
+    <script>
+        function Student(name, email, age) {
+            this.Name = name;
+            this.Email = email;
+            this.Age = age;
+        }
+
+        var std1 = new Student('ali', 'ali@gmail.com', 22);
+        var std2 = new Student('wasim', 'wasim@gmail.com', 30);        
+
+        document.writeln(std.Age);
+    </script>
+
+    <script src="myscripts.js">
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Numbers in JavaScript</h2>
+        <script>
+            var age = 25;
+            document.writeln(age);
+
+            var pi = 3.14;
+            alert(pi);
+
+            var profit = 5000 - 1000;
+            document.write(profit);
+        </script>
+
+        <h2>Strings in JavaScript</h2>
+        <script>
+            var name= "ali";
+            var email = name + "@email.com";
+
+            var firstname = "Ghulam";
+            var lastname = "Nabi";
+            var fullname = firstname + lastname;
+
+            document.write(fullname);
+
+        </script>
+        <h2>Booleans</h2>
+        <script>
+            var pakistanworld2019jeetgaya = false;
+            var aajTuesdayHay = true;
+
+            var twolessthan5 = 2<5; //true;
+            var fivegreaterthan100 = 5>100; //false;
+
+            var twoislessthanequalto2 = 2<=2; //true
+            
+            var castedbool = Boolean("true"); // true;                      
+
+        </script>
+
+        <h2>Objects</h2>
+
+        <script>
+            var studentinfo = {Name: "ali", Email: "ali@gamil.com"};            
+        </script>
+
+        <h2>Functions</h2>
+        <script>
+            function Add(a,b) {
+                return a,b;
+            }
+
+            function PI() {
+                return Math.PI;
+            }
+        </script>
+
+        <h2>Default values(Undefined/null)</h2>
+
+        <script>
+            var salary = null;
+
+            var thirdeye = undefined;
+
+            var studentinfo = {Name: "ali"};
+
+            document.writeln(studentinfo.Address);//error
+        </script>
+
+        <hr />
+
+        <h2>Control Statements</h2>
+
+        <script>
+            if (4%2 == 0) {
+                document.writeln('4 is even number');
+            }
+
+            var age = 12;
+            if (age<=18) {
+                document.writeln('you are not allowed');
+            } else {
+                document.writeln('you are eligible for registration');
+            }
+
+            var dayofweek = prompt("Enter any day name");
+
+            switch (dayofweek) {
+                case "Monday":
+                        document.writeln('Monday is 1st day of week');
+                    break;
+                case "Tuesday":
+                    document.writeln('Tuesday is 2nd day of week');
+                break;            
+                default:
+                        document.writeln('unknown');
+                break;
+            }
+
+            if (dayofweek == "Monday") {
+                document.writeln('Monday is 1st day of week');
+            }
+            else if(dayofweek == "Tuesday")
+            {
+                document.writeln('Tuesday is 2nd day of week');
+            }
+            else
+            {
+                document.writeln('unknown');
+            }
+
+            var primes = [1,2, 3, 5, 7, 11, 13,17];
+            for (var i = 0; i < primes.length; i++) {
+                document.writeln(i);
+            }
+
+            while (1==1) {
+                //infinite loop.
+            }
+
+            do
+            {
+                document.writeln('this loop will run at least once.');
+            }while(6<1)
+
+        </script>
+
+    </body>
+</html>
