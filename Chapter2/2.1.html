@@ -1,0 +1,51 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Regular Expressions</h1>
+    <section>
+        <h2>RegExp Object</h2>
+        <script>
+            var reg = new RegExp(/\d{5}-\d{7}-\d/);  
+        </script>
+        <ul>
+            <li>
+                /\d/ is the way expressions are written
+            </li>
+            <li>
+                \d is the <b>pattern</b>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>RegExp Methods</h2>
+        <h3>test</h3>
+        <script>
+            var reg = new RegExp(/\d/);
+            reg.test("42101-8839105-7")
+        </script>
+        <ul>
+            <li>
+                test returns bool.
+            </li>
+        </ul>
+    </section>
+    <section>        
+        <h3>string search using pattern</h3>
+        <script>
+            var checklist = "Watching Birds";
+            checklist.search(/Bird/);
+        </script>
+        <ul>
+            <li>
+                search returns index of found string.
+            </li>
+        </ul>
+    </section>
+
+</body>
+
+</html>
