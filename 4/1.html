@@ -1,0 +1,52 @@
+<html>
+<head>
+    <style>
+        .right
+        {
+             
+        }
+    </style>
+    <script>
+        var images = [];
+
+        for (var i = 1; i <= 8; i++) {
+            images.push('sprite1/' + i + '.png');
+
+        }
+
+        var position = 700;
+        var rate = 15;
+        var i = 0;
+        function Animate() {
+            //console.log(event.keyCode);
+            if (event.keyCode == 37)//left key
+            {
+                document.getElementById('result2').style.transform = "rotateY(0deg)";
+                document.getElementById('result2').src = images[i];
+                position -= rate;
+                document.getElementById('result2').style.marginLeft = position + 'px';
+                i++;
+                if (i > 7)
+                    i = 0;
+            }
+            else if (event.keyCode == 39)// right key
+            {
+                // transform: rotateY(-180deg);
+
+                document.getElementById('result2').style.transform = "rotateY(-180deg)";
+                document.getElementById('result2').src = images[i];
+                position += rate;
+                document.getElementById('result2').style.marginLeft = position + 'px';
+                i++;
+                if (i > 7)
+                    i = 0;
+            }
+        }
+    </script>
+</head>
+<body onkeydown="Animate()">
+
+    <img src="sprite1/old-device-display-classic-arcade-style.jpg" style="width:900px;position:absolute; z-index:0;" />
+    <img src='sprite1/1.png' id='result2' style="margin-left:700px;margin-top:280px;" />
+</body>
+</html>
