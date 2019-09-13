@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function GetResponseFromAPI(params) {
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('get', 'http://dataservice.accuweather.com/forecasts/v1/daily/1day/261158?apikey=4KaHLFlTiGQesbYbGzFJJnFBFsMyGogn');
+            xhr.onload = function(resp)
+            {   
+                console.log(xhr.response);
+                document.getElementById('response').innerHTML = JSON.parse(xhr.response).DailyForecasts[0].Temperature.Maximum.Value;  
+            };
+
+            xhr.send();
+        }
+    </script>
+</head>
+<body onload="GetResponseFromAPI()">
+    <div id="response">
+
+    </div>    
+</body>
+</html>
