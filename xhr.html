@@ -4,25 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        *
+        {
+            font-family: Arial;
+        }
+    </style>
     <title>Document</title>
     <script>
         function GetResponseFromAPI(params) {
             var xhr = new XMLHttpRequest();
-
             xhr.open('get', 'http://dataservice.accuweather.com/forecasts/v1/daily/1day/261158?apikey=4KaHLFlTiGQesbYbGzFJJnFBFsMyGogn');
             xhr.onload = function(resp)
             {   
                 console.log(xhr.response);
-                document.getElementById('response').innerHTML = JSON.parse(xhr.response).DailyForecasts[0].Temperature.Maximum.Value;  
-            };
+                var forecast = JSON.parse(xhr.response).DailyForecasts[0];
 
+                var calcius = Math.ceil((parseInt(forecast.Temperature.Maximum.Value) - 32)  * 5/9);
+
+
+                document.getElementById('temp').innerHTML = "Karachi Temperature: " + calcius + " &#8451;";  
+                document.getElementById('cloudy').innerHTML = forecast.Day.IconPhrase;  
+
+              document.getElementById('ci').src = 'https://www.accuweather.com/images/weathericons/'+ forecast.Day.Icon +'.svg';
+            };
             xhr.send();
         }
     </script>
 </head>
 <body onload="GetResponseFromAPI()">
-    <div id="response">
+    <img src="" id="ci"  style="width: 200px" alt="" srcset="">
+    <div id="temp">
 
     </div>    
+    <div id='cloudy'>
+            
+    </div>
 </body>
 </html>
